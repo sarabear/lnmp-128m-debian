@@ -153,7 +153,7 @@ END
 }
 
 function install_php {
-    check_install php-cgi php5-cgi php5-cli php5-mysql php5-curl
+    check_install php-cgi php5-cgi php5-cli php5-mysql php5-curl php5-gd
     cat > /etc/init.d/php-cgi <<END
 #!/bin/bash
 ### BEGIN INIT INFO
