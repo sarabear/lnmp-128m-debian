@@ -399,13 +399,17 @@ system)
     install_syslogd
     install_dropbear
     ;;
+apt-update)
+    remove_unneeded
+    update_upgrade
+    ;;
 wordpress)
     install_wordpress $2
     ;;
 *)
     echo 'Usage:' `basename $0` '[option]'
     echo 'Available option:'
-    for option in system exim4 mysql nginx php wordpress
+    for option in system apt-update exim4 mysql nginx php wordpress
     do
         echo '  -' $option
     done
