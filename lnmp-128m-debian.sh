@@ -296,6 +296,7 @@ function install_wordpress {
     mkdir /tmp/wordpress.$$
     wget --no-check-certificate -O 1.tar.gz https://cn.wordpress.org/wordpress-4.7.2-zh_CN.tar.gz
     tar zxf 1.tar.gz -C /tmp/wordpress.$$
+    mkdir /var/www
     mv /tmp/wordpress.$$/wordpress "/var/www/$1"
     rm -rf /tmp/wordpress.$$
     chown www-data:www-data -R "/var/www/$1"
