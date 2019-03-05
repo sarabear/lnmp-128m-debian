@@ -114,9 +114,7 @@ function install_exim4 {
 
 function install_mysql {
     # Install the MySQL packages
-    check_install mysqld mysql-server
-    check_install mysql mysql-client
-
+    check_install libdbi-perl libdbd-mysql-perl mysql-client-5.5 mysql-server-core-5.5 mysql-server-5.5 mysql-client mysql-server
     # Install a low-end copy of the my.cnf to disable InnoDB, and then delete
     # all the related files.
     invoke-rc.d mysql stop
@@ -153,7 +151,7 @@ END
 }
 
 function install_php {
-    check_install php-cgi php5-cgi php5-cli php5-mysql php5-curl php5-gd
+    check_install php5-cgi php5-cgi php5-cli php5-mysql php5-curl php5-gd php5-idn
     cat > /etc/init.d/php-cgi <<END
 #!/bin/bash
 ### BEGIN INIT INFO
